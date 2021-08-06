@@ -4,9 +4,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Best Group Project Test</title>
+  <title>BestInvest</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+
+  <!-- OPEN STOCK TICKER MODAL  -->
+  <button id="openTickerModal">Enter Stock Ticker</button>
   
+  <!-- STOCK TICKER MODAL div -->
+  <div id="tickerModal" class="modal">
+  
+    <!-- STOCK TICKER MODAL CONTENT -->
+    <div class="modal-content">
+      <span class="close" onclick="closeTickerButton()" id="closeTicker">&times;</span>
+      <label for="stockTicker">Enter Stock Ticker:</label>
+      <input type="text" id="stockTicker" name="stockTicker" placeholder="AAPL"><br><br>
+      <button type="submit" onclick="submitTicker()" id="stockTickerSubmit">Submit</button>
+    </div>
+  </div>
+
+
+
+
+  <!-- OPEN MATERIAL SELECT MODAL  -->
+  <button id="openMaterialModal">Enter Material Information</button>
+  
+  <!-- MATERIAL SELECT MODAL div -->
+  <div id="materialModal" class="modal">
+  
+    <!-- MATERIAL SELECT MODAL CONTENT -->
+    <div class="modal-content-2">
+      <span class="close" onclick="closeMaterialButton()" id="closeMaterial">&times;</span>
+      <label for="selectedMaterialQuantity">Enter Quantity:</label>
+      <input type="text" id="selectedMaterialQuantity" name="selectedMaterialQuantity" placeholder="#"><br><br>
+      <label for="selectedUnit">Unit:</label>
+      <input type="text" id="selectedUnit" name="selectedUnit" placeholder="lbs"><br><br>
+      <label for="selectedMaterial">Material/Item:</label>
+      <input type="text" id="selectedMaterial" name="selectedMaterial" placeholder="gold"><br><br>
+      <button type="submit" onclick="submitMaterials()" id="submitMaterials">Submit</button>
+    </div>
+  </div>
+
+
+  <script src="./assets/script.js" defer></script>
+
 </body>
+
+
 </html>

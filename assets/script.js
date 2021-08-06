@@ -15,7 +15,7 @@ var getQuote = function (ticker) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
-        console.log(data[0].bidPrice);
+        console.log(data.iexClose);
         //do something here....
       });
     } else {
@@ -79,6 +79,8 @@ var selectedMaterial = '';
 // Stores and logs stock ticker input
 function submitTicker() {
     selectedTicker = document.querySelector("#stockTicker").value;
+    //run the stock fetch
+    getQuote(selectedTicker);
     console.log("selectedTicker: " + selectedTicker);
 }
 

@@ -88,6 +88,7 @@ function submitMaterials() {
   selectedMaterialQuantity = document.querySelector("#selectedMaterialQuantity").value;
   selectedUnit = document.querySelector("#selectedUnit").value;
   selectedMaterial = document.querySelector("#selectedMaterial").value;
+  //cut down on 
   console.log("selectedMaterialQuantity: " + selectedMaterialQuantity);
   console.log("selectedUnit: " + selectedUnit);
   console.log("selectedMaterial: " + selectedMaterial);

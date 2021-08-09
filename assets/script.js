@@ -1,4 +1,3 @@
-
 //Token for Api
 var token = ""
 var ticker = ""
@@ -39,7 +38,7 @@ var getCall = function (call) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
-        console.log(data[0].bidPrice);
+        // console.log(data[0].bidPrice);
         //do something here....
       });
     } else {
@@ -62,11 +61,11 @@ var openTickerModal = document.getElementById("openTickerModal");
 var openMaterialModal = document.getElementById("openMaterialModal");
 
 // Open modals when clicked
-openTickerModal.onclick = function() {
+openTickerModal.click = function() {
   tickerModal.style.display = "block";
 }
 
-openMaterialModal.onclick = function() {
+openMaterialModal.click = function() {
   materialModal.style.display = "block";
 }
 

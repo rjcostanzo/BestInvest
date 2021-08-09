@@ -19,10 +19,7 @@
         <div class="navbar-start">
           <div class="navbar-item">
             <div class="buttons">
-              <!-- OPEN STOCK TICKER MODAL  -->
-              <button class="button is-dark" id="openTickerModal">Enter Stock Ticker</button>
-              <!-- OPEN MATERIAL SELECT MODAL  -->
-              <button class="button is-dark" id="openMaterialModal">Enter Asset Information</button>
+
             </div>
           </div>
         </div>
@@ -39,10 +36,59 @@
   </nav>
 
   <section class="hero is-fullheight is-info">
-    <h1 class="hero-body">
-      <p class="title">This for That</p>
-      
-    </h1>
+    <div class="hero-head">
+      <h1 class="title">This for That</h1>
+    </div>
+    <div class="hero-body">
+      <div class="tile is-parent">
+        <div class="tile is-child notification is-success">
+          <!-- OPEN STOCK TICKER MODAL  -->
+          <div class="title">Stock Assets</div>
+          <div class="content">
+            <button class="button is-dark" id="openTickerModal">Enter Stock Ticker</button>
+            <!-- STOCK TICKER MODAL div -->
+            <div id="tickerModal" class="modal">
+
+              <!-- STOCK TICKER MODAL CONTENT -->
+              <div class="modal-content">
+                <span class="close" onclick="closeTickerButton()" id="closeTicker">&times;</span>
+                <label for="stockTicker">Enter Stock Ticker:</label>
+                <input type="text" id="stockTicker" name="stockTicker" placeholder="AAPL"><br><br>
+                <button type="submit" onclick="submitTicker()" id="stockTickerSubmit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <div class="tile is-parent">
+          <div class="tile is-child notification is-success">
+            <div class="title">Commodity Assets</div>
+            <div class="content">
+              <!-- OPEN MATERIAL SELECT MODAL  -->
+              <button class="button is-dark" id="openMaterialModal">Enter Asset Information</button>
+              <!-- MATERIAL SELECT MODAL div -->
+              <div id="materialModal" class="modal">
+
+                <!-- MATERIAL SELECT MODAL CONTENT -->
+                <div class="modal-content-2">
+                  <span class="close" onclick="closeMaterialButton()" id="closeMaterial">&times;</span>
+                  <label for="selectedMaterialQuantity">Enter Quantity:</label>
+                  <input type="text" id="selectedMaterialQuantity" name="selectedMaterialQuantity"
+                    placeholder="#"><br><br>
+                  <label for="selectedUnit">Unit:</label>
+                  <input type="text" id="selectedUnit" name="selectedUnit" placeholder="lbs"><br><br>
+                  <label for="selectedMaterial">Material/Item:</label>
+                  <input type="text" id="selectedMaterial" name="selectedMaterial" placeholder="gold"><br><br>
+                  <button type="submit" onclick="submitMaterials()" id="submitMaterials">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
   </section>
 
   <!--Creating company profile-->
@@ -89,33 +135,9 @@
     </div>
   </section>
 
-  <!-- STOCK TICKER MODAL div -->
-  <div id="tickerModal" class="modal">
 
-    <!-- STOCK TICKER MODAL CONTENT -->
-    <div class="modal-content">
-      <span class="close" onclick="closeTickerButton()" id="closeTicker">&times;</span>
-      <label for="stockTicker">Enter Stock Ticker:</label>
-      <input type="text" id="stockTicker" name="stockTicker" placeholder="AAPL"><br><br>
-      <button type="submit" onclick="submitTicker()" id="stockTickerSubmit">Submit</button>
-    </div>
-  </div>
 
-  <!-- MATERIAL SELECT MODAL div -->
-  <div id="materialModal" class="modal">
 
-    <!-- MATERIAL SELECT MODAL CONTENT -->
-    <div class="modal-content-2">
-      <span class="close" onclick="closeMaterialButton()" id="closeMaterial">&times;</span>
-      <label for="selectedMaterialQuantity">Enter Quantity:</label>
-      <input type="text" id="selectedMaterialQuantity" name="selectedMaterialQuantity" placeholder="#"><br><br>
-      <label for="selectedUnit">Unit:</label>
-      <input type="text" id="selectedUnit" name="selectedUnit" placeholder="lbs"><br><br>
-      <label for="selectedMaterial">Material/Item:</label>
-      <input type="text" id="selectedMaterial" name="selectedMaterial" placeholder="gold"><br><br>
-      <button type="submit" onclick="submitMaterials()" id="submitMaterials">Submit</button>
-    </div>
-  </div>
 
   <!--Footer-->
   <footer class="has-text-white has-background-warning">

@@ -2,7 +2,6 @@
 var token = ""
 var ticker = ""
 
-
 var getQuote = function (ticker) {
   //Sample ticker for proof of concept
   // var ticker = `amzn`;
@@ -61,11 +60,13 @@ var openTickerModal = document.getElementById("openTickerModal");
 var openMaterialModal = document.getElementById("openMaterialModal");
 
 // Open modals when clicked
-openTickerModal.click = function() {
+openTickerModal.onclick = function() {
+  console.log("Open the Ticker Modal");
   tickerModal.style.display = "block";
 }
 
-openMaterialModal.click = function() {
+openMaterialModal.onclick = function() {
+  console.log("Open the Material Modal");
   materialModal.style.display = "block";
 }
 

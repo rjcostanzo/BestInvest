@@ -82,6 +82,8 @@ function submitTicker() {
     //run the stock fetch
     getQuote(selectedTicker);
     console.log("selectedTicker: " + selectedTicker);
+
+    tickerModal.insertAdjacentHTML("afterend", selectedTicker);
 }
 
 // Stores and logs quantity, unit, and material input
@@ -93,6 +95,14 @@ function submitMaterials() {
   console.log("selectedMaterialQuantity: " + selectedMaterialQuantity);
   console.log("selectedUnit: " + selectedUnit);
   console.log("selectedMaterial: " + selectedMaterial);
+
+
+  materialModal.insertAdjacentHTML("afterend", selectedMaterial);
+  materialModal.insertAdjacentHTML("afterend", " ");
+  materialModal.insertAdjacentHTML("afterend", selectedUnit);
+  materialModal.insertAdjacentHTML("afterend", " of ");
+  materialModal.insertAdjacentHTML("afterend", selectedMaterialQuantity);
+
 }
 
 // When the user clicks anywhere outside of the modal, close it

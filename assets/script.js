@@ -101,11 +101,11 @@ function submitMaterials() {
   resultSelectedMaterial= getCall((selectedMaterial));
 
   materialModal.insertAdjacentHTML("afterend", selectedMaterial);
-  materialModal.insertAdjacentHTML("afterend", " of ");
-  materialModal.insertAdjacentHTML("afterend", selectedUnit);
-  materialModal.insertAdjacentHTML("afterend", " ");
-  materialModal.insertAdjacentHTML("afterend", selectedMaterialQuantity);
-  materialModal.insertAdjacentHTML("afterend", resultSelectedMaterial)
+  // materialModal.insertAdjacentHTML("afterend", " of ");
+  // materialModal.insertAdjacentHTML("afterend", selectedUnit);
+  // materialModal.insertAdjacentHTML("afterend", " ");
+  // materialModal.insertAdjacentHTML("afterend", selectedMaterialQuantity);
+  materialModal.insertAdjacentHTML("afterend", resultSelectedMaterial);
 
 }
 

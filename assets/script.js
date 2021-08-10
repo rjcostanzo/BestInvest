@@ -29,16 +29,18 @@ var getQuote = function (ticker) {
 var getCall = function (call) {
   //Sample ticker for proof of concept
   // var ticker = `amzn`;
-  var apiUrl = `https://www.quandl.com/api/v3/datasets/${call}?start_date=2021-07-29&end_date=2021-07-29&api_key=3sfizins6VRG4tN1qVpz`;
+  // var apiUrl = `https://www.quandl.com/api/v3/datasets/${call}?start_date=2021-07-29&end_date=2021-07-29&api_key=3sfizins6VRG4tN1qVpz`;
   // var apiUrl = `https://www.quandl.com/api/v3/datasets/CHRIS/ASX_WM1?start_date=2021-06-29&end_date=2021-06-29&api_key=3sfizins6VRG4tN1qVpz';
+  var apiUrl = `https://www.quandl.com/api/v3/datasets/${call}?start_date=2021-06-25&end_date=2021-06-29&api_key=3sfizins6VRG4tN1qVpz`;
   console.log(apiUrl);
   fetch(apiUrl).then(function (response) {
     //request was successful
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
-        // console.log(data[0].bidPrice);
+        console.log(data.dataset.data[0][1]);
         //do something here....
+        return (data.dataset.data[0][1]);
       });
     } else {
       alert("Error: Quandl quote is not found");
@@ -75,6 +77,7 @@ var selectedTicker = '';
 var selectedMaterialQuantity = 1;
 var selectedUnit = '';
 var selectedMaterial = '';
+var resultSelectedMaterial = '';
 
 // Stores and logs stock ticker input
 function submitTicker() {
@@ -95,13 +98,14 @@ function submitMaterials() {
   console.log("selectedMaterialQuantity: " + selectedMaterialQuantity);
   console.log("selectedUnit: " + selectedUnit);
   console.log("selectedMaterial: " + selectedMaterial);
-
+  resultSelectedMaterial= getCall((selectedMaterial));
 
   materialModal.insertAdjacentHTML("afterend", selectedMaterial);
   materialModal.insertAdjacentHTML("afterend", " of ");
   materialModal.insertAdjacentHTML("afterend", selectedUnit);
   materialModal.insertAdjacentHTML("afterend", " ");
   materialModal.insertAdjacentHTML("afterend", selectedMaterialQuantity);
+  materialModal.insertAdjacentHTML("afterend", resultSelectedMaterial)
 
 }
 
@@ -129,6 +133,6 @@ function closeMaterialButton() {
 
 //Create a model to display the stock in terms of the raw material
 
-getCall('CHRIS/CME_461');
+// getCall('CHRIS/CME_461');
 
 // getQuote('amzn');

@@ -1,11 +1,14 @@
 //Token for Api
 var token = ""
 var ticker = ""
+var selectedTicker;
+var quoteValue;
 
 var getQuote = function (ticker) {
   //Sample ticker for proof of concept
   // var ticker = `amzn`;
-  var apiUrl = `https://sandbox.iexapis.com/stable/stock/${ticker}/quote/2?token=Tpk_96456627b77642ab978010ddff25e36e`;
+  selectedTicker = document.querySelector("#stockTicker").value;
+  var apiUrl = `https://sandbox.iexapis.com/stable/stock/${selectedTicker}/quote/2?token=Tpk_96456627b77642ab978010ddff25e36e`;
   // var apiUrl = `https://sandbox.iexapis.com/stable/tops?token=${token}&symbols=${ticker}`;
   console.log(apiUrl);
   fetch(apiUrl).then(function (response) {
@@ -14,6 +17,8 @@ var getQuote = function (ticker) {
       response.json().then(function (data) {
         console.log(data);
         console.log(data.iexClose);
+        quoteValue = data.iexClose;
+        submitTicker(quoteValue)
         //do something here....
       });
     } else {
@@ -80,7 +85,7 @@ openMaterialModal.onclick = function() {
 }
 
 // Initialize all user input variables
-var selectedTicker = '';
+
 var selectedMaterialQuantity = 1;
 var selectedUnit = '';
 var selectedMaterial = '';
@@ -90,10 +95,10 @@ var resultSelectedMaterial = '';
 function submitTicker() {
     selectedTicker = document.querySelector("#stockTicker").value;
     //run the stock fetch
-    getQuote(selectedTicker);
+    // getQuote(selectedTicker);
     console.log("selectedTicker: " + selectedTicker);
-
     tickerModal.insertAdjacentHTML("afterend", selectedTicker);
+    tickerModal.insertAdjacentHTML("afterend", quoteValue);
 }
 
 // Stores and logs quantity, unit, and material input

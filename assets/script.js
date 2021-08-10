@@ -26,21 +26,28 @@ var getQuote = function (ticker) {
     });
 };
 
+var callValue;
+
 var getCall = function (call) {
   //Sample ticker for proof of concept
   // var ticker = `amzn`;
   // var apiUrl = `https://www.quandl.com/api/v3/datasets/${call}?start_date=2021-07-29&end_date=2021-07-29&api_key=3sfizins6VRG4tN1qVpz`;
   // var apiUrl = `https://www.quandl.com/api/v3/datasets/CHRIS/ASX_WM1?start_date=2021-06-29&end_date=2021-06-29&api_key=3sfizins6VRG4tN1qVpz';
-  var apiUrl = `https://www.quandl.com/api/v3/datasets/${call}?start_date=2021-06-25&end_date=2021-06-29&api_key=3sfizins6VRG4tN1qVpz`;
+  selectedMaterialQuantity = document.querySelector("#selectedMaterialQuantity").value;
+  selectedUnit = document.querySelector("#selectedUnit").value;
+  selectedMaterial = document.querySelector("#selectedMaterial").value;
+  
+  var apiUrl = `https://www.quandl.com/api/v3/datasets/${selectedMaterial}?start_date=2021-06-25&end_date=2021-06-29&api_key=3sfizins6VRG4tN1qVpz`;
   console.log(apiUrl);
+  
   fetch(apiUrl).then(function (response) {
     //request was successful
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data);
-        console.log(data.dataset.data[0][1]);
         //do something here....
-        return (data.dataset.data[0][1]);
+        callValue = (data.dataset.data[0][1])
+        console.log(callValue);
+        submitMaterials(callValue);
       });
     } else {
       alert("Error: Quandl quote is not found");
@@ -91,22 +98,22 @@ function submitTicker() {
 
 // Stores and logs quantity, unit, and material input
 function submitMaterials() {
-  selectedMaterialQuantity = document.querySelector("#selectedMaterialQuantity").value;
-  selectedUnit = document.querySelector("#selectedUnit").value;
-  selectedMaterial = document.querySelector("#selectedMaterial").value;
+  // selectedMaterialQuantity = document.querySelector("#selectedMaterialQuantity").value;
+  // selectedUnit = document.querySelector("#selectedUnit").value;
+  // selectedMaterial = document.querySelector("#selectedMaterial").value;
   //cut down on 
   console.log("selectedMaterialQuantity: " + selectedMaterialQuantity);
   console.log("selectedUnit: " + selectedUnit);
   console.log("selectedMaterial: " + selectedMaterial);
-  resultSelectedMaterial= getCall((selectedMaterial));
+  // resultSelectedMaterial = getCall(selectedMaterial);
+  console.log("SubmitFunction");
 
-  materialModal.insertAdjacentHTML("afterend", selectedMaterial);
+  // materialModal.insertAdjacentHTML("afterend", selectedMaterial);
   // materialModal.insertAdjacentHTML("afterend", " of ");
   // materialModal.insertAdjacentHTML("afterend", selectedUnit);
   // materialModal.insertAdjacentHTML("afterend", " ");
   // materialModal.insertAdjacentHTML("afterend", selectedMaterialQuantity);
-  materialModal.insertAdjacentHTML("afterend", resultSelectedMaterial);
-
+  materialModal.insertAdjacentHTML("afterend", callValue);
 }
 
 // When the user clicks anywhere outside of the modal, close it

@@ -98,9 +98,9 @@ function submitMaterials() {
 
 
   materialModal.insertAdjacentHTML("afterend", selectedMaterial);
-  materialModal.insertAdjacentHTML("afterend", " ");
-  materialModal.insertAdjacentHTML("afterend", selectedUnit);
   materialModal.insertAdjacentHTML("afterend", " of ");
+  materialModal.insertAdjacentHTML("afterend", selectedUnit);
+  materialModal.insertAdjacentHTML("afterend", " ");
   materialModal.insertAdjacentHTML("afterend", selectedMaterialQuantity);
 
 }

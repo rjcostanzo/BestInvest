@@ -73,6 +73,8 @@ var materialModal = document.getElementById("materialModal");
 var openTickerModal = document.getElementById("openTickerModal");
 var openMaterialModal = document.getElementById("openMaterialModal");
 
+var finalComparison = document.getElementById("comparison");
+
 // Open modals when clicked
 openTickerModal.onclick = function() {
   console.log("Open the Ticker Modal");
@@ -91,6 +93,10 @@ var selectedUnit = '';
 var selectedMaterial = '';
 var resultSelectedMaterial = '';
 
+var hasChosenTicker = 0;
+var hasChosenPair = 0;
+var quotient = 0;
+
 // Stores and logs stock ticker input
 function submitTicker() {
     selectedTicker = document.querySelector("#stockTicker").value;
@@ -99,6 +105,8 @@ function submitTicker() {
     console.log("selectedTicker: " + selectedTicker);
     tickerModal.insertAdjacentHTML("afterend", selectedTicker);
     tickerModal.insertAdjacentHTML("afterend", quoteValue);
+    hasChosenTicker = 1;
+    verifyAndCompare();
 }
 
 // Stores and logs quantity, unit, and material input
@@ -119,6 +127,20 @@ function submitMaterials() {
   // materialModal.insertAdjacentHTML("afterend", " ");
   // materialModal.insertAdjacentHTML("afterend", selectedMaterialQuantity);
   materialModal.insertAdjacentHTML("afterend", callValue);
+  hasChosenPair = 1;
+  verifyAndCompare();
+}
+
+function verifyAndCompare() {
+  if (hasChosenPair == 1) {
+    if (hasChosenTicker == 1) {
+    console.log("-- Detected Two Values to Compare --");
+    quotient = (callValue / quoteValue);
+    console.log("-- Comparison: " + quotient + " --");
+    finalComparison.style.display = "block";
+    finalComparison.insertAdjacentHTML("beforeend", quotient);
+    }
+  }
 }
 
 // When the user clicks anywhere outside of the modal, close it

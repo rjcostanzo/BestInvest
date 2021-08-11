@@ -47,6 +47,17 @@
   text-align: center;
 }
 
+#comparison {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: auto;
+  top: 10%;
+  width: 20%;
+  height: 10%;
+}
+
 /* The Close Button */
 #closeTicker {
   color: #aaaaaa;

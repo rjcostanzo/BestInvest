@@ -26,8 +26,8 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-dark">GitHub</a>
-              <a class="button is-link">Download</a>
+              <a class="button is-dark" href="https://github.com/rjcostanzo/BestInvest/tree/develop">GitHub</a>
+              <a class="button is-link">Trade Up</a>
             </div>
           </div>
         </div>
@@ -37,19 +37,19 @@
 
   <section class="hero is-fullheight is-info">
     <div class="hero-head">
-      <h1 class="title">This for That</h1>
+      <h1 class="title has-text-centered mt-5">Asset Compare</h1>
     </div>
-    
-  <div class="tile is-parent" id="comparison">
-    <!-- This is where the final comparison is created -->
-  </div>
+
+    <div class="tile is-parent" id="comparison">
+      <!-- This is where the final comparison is created -->
+    </div>
 
     <div class="hero-body">
       <div class="tile is-parent">
         <div class="tile is-child notification is-success">
           <!-- OPEN STOCK TICKER MODAL  -->
-          <div class="title">Stock Assets</div>
-          <div class="content">
+          <div class="title has-text-centered">Stock Assets</div>
+          <div class="content has-text-centered">
             <button class="button is-dark" id="openTickerModal">Enter Stock Ticker</button>
             <!-- STOCK TICKER MODAL div -->
             <div id="tickerModal" class="modal">
@@ -65,34 +65,35 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="hero-body">
-        <div class="tile is-parent">
-          <div class="tile is-child notification is-success">
-            <div class="title">Commodity Assets</div>
-            <div class="content">
-              <!-- OPEN MATERIAL SELECT MODAL  -->
-              <button class="button is-dark" id="openMaterialModal">Enter Asset Information</button>
-              <!-- MATERIAL SELECT MODAL div -->
-              <div id="materialModal" class="modal">
+    <div class="hero-body">
+      <div class="tile is-parent">
+        <div class="tile is-child notification is-success">
+          <div class="title has-text-centered">Commodity Assets</div>
+          <div class="content has-text-centered">
+            <!-- OPEN MATERIAL SELECT MODAL  -->
+            <button class="button is-dark" id="openMaterialModal">Enter Asset Information</button>
+            <!-- MATERIAL SELECT MODAL div -->
+            <div id="materialModal" class="modal">
 
-                <!-- MATERIAL SELECT MODAL CONTENT -->
-                <div class="modal-content-2">
-                  <span class="close" onclick="closeMaterialButton()" id="closeMaterial">&times;</span>
-                  <label for="selectedMaterialQuantity">Enter Quantity:</label>
-                  <input type="text" id="selectedMaterialQuantity" name="selectedMaterialQuantity"
-                    placeholder="#"><br><br>
-                  <label for="selectedUnit">Unit:</label>
-                  <input type="text" id="selectedUnit" name="selectedUnit" placeholder="lbs"><br><br>
-                  <label for="selectedMaterial">Material/Item:</label>
-                  <input type="text" id="selectedMaterial" name="selectedMaterial" placeholder="gold"><br><br>
-                  <button type="submit" onclick="getCall()" id="submitMaterials">Submit</button>
-                </div>
+              <!-- MATERIAL SELECT MODAL CONTENT -->
+              <div class="modal-content-2">
+                <span class="close" onclick="closeMaterialButton()" id="closeMaterial">&times;</span>
+                <label for="selectedMaterialQuantity">Enter Quantity:</label>
+                <input type="text" id="selectedMaterialQuantity" name="selectedMaterialQuantity"
+                  placeholder="#"><br><br>
+                <label for="selectedUnit">Unit:</label>
+                <input type="text" id="selectedUnit" name="selectedUnit" placeholder="lbs"><br><br>
+                <label for="selectedMaterial">Material/Item:</label>
+                <input type="text" id="selectedMaterial" name="selectedMaterial" placeholder="gold"><br><br>
+                <button type="submit" onclick="getCall()" id="submitMaterials">Submit</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
   </section>
 
@@ -101,20 +102,21 @@
     <!--company title-->
     <div class="company-profile">
       <div class="columns">
-        <div class="column  is-half is-offset-one-quarter title has-text-centered has-background-warning">
+        <div class="column is-half is-offset-one-quarter title has-text-centered has-background-warning">
           <h4>Company profile</h4>
           <!-- TradingView Widget BEGIN -->
-
-          </div>
-          <!-- TradingView Widget END -->
+          <a type="html" href="TradingView/TradingView.html">Chart</a>
 
         </div>
-        <br />
+        <!-- TradingView Widget END -->
+
       </div>
-      <!--Company card-->
-      <div class="card has-background-warning">
-        <div class="card-image"></div>
-      </div>
+      <br />
+    </div>
+    <!--Company card-->
+    <div class="card has-background-warning">
+      <div class="card-image"></div>
+    </div>
     </div>
   </section>
 

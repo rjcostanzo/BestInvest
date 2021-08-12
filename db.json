@@ -1,0 +1,47 @@
+[
+  {
+    "Name": "Cotton",
+    "Weight": "50,000 lbs",
+    "Index Name": "CHRIS/ICE_CT"
+  },
+  {
+    "Name": "Copper",
+    "Weight": "1 Kg",
+    "Index Name": "CHRIS/MCX_CU"
+  },
+  {
+    "Name": "Class III Milk",
+    "Weight": "20,000 lbs",
+    "Index Name": "CHRIS/CME_DA"
+  },
+  {
+    "Name": "Durum Wheat",
+    "Weight": "100 tonnes",
+    "Index Name": "CHRIS/ICE_DW"
+  },
+  {
+    "Name": "Potatos",
+    "Weight": "100 kilos",
+    "Index Name": "CHRIS/EUREX_FEPP"
+  },
+  {
+    "Name": "Gold",
+    "Weight": "100 troy ounces",
+    "Index Name": "CHRIS/CME_GC"
+  },
+  {
+    "Name": "Lumber",
+    "Weight": "110,000 board feet",
+    "Index Name": "CHRIS/CME_LB"
+  },
+  {
+    "Name": "Orange Juice",
+    "Weight": "15,000 lbs",
+    "Index Name": "CHRIS/ICE_OJ"
+  },
+  {
+    "Name": "Coffee",
+    "Weight": "10 metric tonnes",
+    "Index Name": "CHRIS/LIFFE_RC"
+  }
+]
